@@ -1,7 +1,7 @@
 {
   "name": "ember-i-am",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A simple mixin for checking roles on user models.",
   "directories": {
     "doc": "doc",
     "test": "tests"

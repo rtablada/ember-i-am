@@ -1,26 +1,29 @@
 # Ember-i-am
 
-This README outlines the details of collaborating on this Ember addon.
+This addon provides a simple mixin to see if a user role exists on a user
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `ember install ember-i-am`
 
-## Running
+## Use
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+Add the `i-am` mixin to your user model (or any Ember Object):
 
-## Running Tests
+```js
+import DS from 'ember-data';
+import IAm from 'ember-i-am/mixins/i-am';
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+export default DS.Model.extend(IAm, {
+  roles: DS.attr(),
+});
+```
 
-## Building
+Then to check if a user has a role:
 
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+```js
+let user = this.store.find('user', 1).then((user) => {
+  // checks if the user roles array contains `admin`
+  user.get('isAdmin');
+});
+```
