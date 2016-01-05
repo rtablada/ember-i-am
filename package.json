@@ -1,6 +1,6 @@
 {
   "name": "ember-i-am",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A simple mixin for checking roles on user models.",
   "directories": {
     "doc": "doc",
